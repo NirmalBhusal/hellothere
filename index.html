@@ -2,39 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Krishi Website</title>
     <style>
-        /* Base Styles */
-        body {
-            font-family: Arial, sans-serif;
+        /* General Reset */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
             background-color: black;
             color: #333;
         }
 
+        /* Header */
         header {
             background: linear-gradient(135deg, #3498db, #8e44ad);
-            padding: 15px 20px;
+            padding: 20px;
             display: flex;
-            justify-content: space-around;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             color: white;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            flex-wrap: wrap;  /* Allow flex to wrap on small screens */
+            text-align: center;
+        }
+
+        header nav {
+            width: 100%;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            margin: 0;
+            justify-content: center;
+            flex-wrap: wrap; /* Ensure items wrap on small screens */
             padding: 0;
-            flex-wrap: wrap;  /* Allow navigation to wrap on smaller screens */
+            margin: 10px 0;
         }
 
         nav ul li {
-            margin: 0 10px;
+            margin: 10px;
         }
 
         nav ul li a {
@@ -54,7 +65,7 @@
         .button {
             display: inline-block;
             padding: 12px 24px;
-            margin: 0 5px;
+            margin: 5px;
             border-radius: 5px;
             font-size: 16px;
             color: white;
@@ -70,6 +81,7 @@
             background-color: #6b3f1b;
         }
 
+        /* Main Section */
         main {
             max-width: 1200px;
             margin: 20px auto;
@@ -77,6 +89,27 @@
             text-align: center;
         }
 
+        /* Section Titles */
+        section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            font-size: 1rem;
+        }
+
+        section ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        section ul li {
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
         footer {
             background-color: #f2f2f2;
             padding: 10px;
@@ -86,41 +119,49 @@
         .date {
             background-color: aqua;
             padding: 10px;
-            text-align: center;
         }
 
+        /* Visitor Counter */
+        #visitorCounter {
+            margin-top: 20px;
+        }
+
+        /* Main Content Structure */
         .first {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
             padding: 20px;
             background-color: #f0f0f0;
             box-sizing: border-box;
-            flex-wrap: wrap;  /* Allow flex to wrap on smaller screens */
         }
 
-        .table {
-            height: 150px;
-            width: 150px;
-        }
-
-        .image {
-            border-radius: 50%;
-            align-self: center;
-            width: 150px;  /* Adjusted size */
-            margin: 20px 0;
-        }
-
-        .third img {
+        .first .second img,
+        .first .third img {
             max-width: 100%;
             height: auto;
         }
 
+        .second,
+        .third {
+            flex: 1;
+            text-align: center;
+            margin: 10px;
+        }
+
+        .second img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        /* Scrolling Marquee */
         .tone {
             background-color: #f0f0f0;
             padding: 10px;
             text-align: center;
-            margin: 10px 0;
         }
 
         .went {
@@ -131,6 +172,112 @@
         .gone {
             background-color: aqua;
             padding: 10px;
+        }
+
+        /* Responsive Design - Media Queries */
+        @media (max-width: 1024px) {
+            header {
+                padding: 20px 10px;
+            }
+
+            .first {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .first .second,
+            .first .third {
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            .tone {
+                padding: 15px;
+            }
+
+            .button {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            nav ul {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .first {
+                padding: 15px;
+            }
+
+            .second img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .third img {
+                width: 120px;
+                height: 120px;
+            }
+
+            section h2 {
+                font-size: 1.3rem;
+            }
+
+            section p,
+            section ul li {
+                font-size: 1rem;
+            }
+
+            footer {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 20px;
+                text-align: center;
+            }
+
+            .first .second img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .tone h4 {
+                font-size: 0.9rem;
+            }
+
+            .button {
+                padding: 10px;
+                font-size: 13px;
+            }
+
+            section h2 {
+                font-size: 1.2rem;
+            }
+
+            section p,
+            section ul li {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Scrollable Marquee Animation */
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
         }
 
         .scrolling-gallery {
@@ -154,76 +301,34 @@
             width: 100%;
             height: auto;
         }
-
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
-        }
-
-        /* Media Queries for Responsiveness */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .first {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .button {
-                font-size: 14px;
-                padding: 10px 20px;
-                margin: 5px 0;
-            }
-
-            .image {
-                width: 100px;
-                margin: 10px 0;
-            }
-
-            .gone {
-                padding: 10px;
-                font-size: 14px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .button {
-                width: 100%;
-                padding: 10px 0;
-            }
-        }
-
     </style>
 </head>
 <body>
-    <!-- Main Header -->
+
+    <!-- Header Section -->
     <header>
-        <a class="button" href="index.html">Home</a>
-        <a class="button" href="image.html">Images</a>
-        <a class="button" href="videos.html">Videos</a>
-        <a class="button" href="ourproducts.html">Products</a>
-        <a class="button" href="contact.html">Contact</a>
-        <a class="button" href="krishinfo.html">Krishi Info</a>
-        <a class="button" href="join.html">Join</a>
+        <h1>Krishi Website</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="button">Home</a></li>
+                <li><a href="image.html" class="button">Images</a></li>
+                <li><a href="videos.html" class="button">Videos</a></li>
+                <li><a href="ourproducts.html" class="button">Products</a></li>
+                <li><a href="contact.html" class="button">Contact</a></li>
+                <li><a href="krishinfo.html" class="button">Krishi Info</a></li>
+                <li><a href="join.html" class="button">Join</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Content Section -->
+    <!-- Main Content -->
     <div class="tone">
-        <div class="went"><br>Latest Update</div>
+        <div class="went">Latest Update</div>
         <div class="gone">
             <h4>अाज २०८१्र/०४/२६ तपाइला हाम्रो Website nbkrishi.com.np मा स्वागत छ 🤗🤗🤗🤗🤗।</h4>
         </div>
     </div>
 
-    <!-- Main Content -->
     <main>
         <section id="home">
             <h1>Welcome to Krishi</h1>
@@ -244,7 +349,7 @@
             <p>Feel free to reach out to us with any inquiries.</p>
             <address>
                 Email: <a href="mailto:N.Bkrishiform@gmail.com">N.Bkrishiform@gmail.com</a><br>
-                <p>Click the phone number to call: <a href="tel:9847531504" style="text-decoration: none; color: blue;">9847531504</a></p>
+                <p>Click the phone number to call: <a href="tel:9847531504">9847531504</a></p>
             </address>
         </section>
     </main>
@@ -252,34 +357,39 @@
     <!-- Footer Section -->
     <footer class="date">
         <p>&copy; 2023 Krishi</p>
-    </footer>
-
-    <footer>
-        <div style="text-align: center;">
-            <div style="font-size: 24px;" id="currentDateTime"></div>
-        </div>
-        <div id="visitorCounter" style="text-align: center; margin-top: 20px;">
+        <div id="visitorCounter">
             <h3>Visitor Counter</h3>
             <p>This page has been visited <span id="visitCount">0</span> times.</p>
         </div>
-        <script>
-            function updateDateTime() {
-                const now = new Date();
-                const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true };
-                const formattedDateTime = now.toLocaleDateString('en-US', options);
-                document.getElementById('currentDateTime').textContent = `Current Date and Time: ${formattedDateTime}`;
-            }
-
-            setInterval(updateDateTime, 1000);
-
-            // Increment visit count when the page loads
-            window.onload = function() {
-                let visitCount = localStorage.getItem('visitCount');
-                visitCount = visitCount ? parseInt(visitCount) + 1 : 1;
-                localStorage.setItem('visitCount', visitCount);
-                document.getElementById('visitCount').textContent = visitCount;
-            };
-        </script>
     </footer>
+
+    <footer>
+        <div id="currentDateTime"></div>
+    </footer>
+
+    <script>
+        // Update current date and time
+        function updateDateTime() {
+            const now = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true };
+            const formattedDateTime = now.toLocaleDateString('en-US', options);
+            document.getElementById('currentDateTime').textContent = `Current Date and Time: ${formattedDateTime}`;
+        }
+
+        setInterval(updateDateTime, 1000);
+
+        // Visitor Counter
+        function incrementVisitCount() {
+            let visitCount = localStorage.getItem('visitCount');
+            visitCount = visitCount ? parseInt(visitCount) + 1 : 1;
+            localStorage.setItem('visitCount', visitCount);
+            document.getElementById('visitCount').textContent = visitCount;
+        }
+
+        window.onload = function() {
+            incrementVisitCount();
+        };
+    </script>
+
 </body>
 </html>
