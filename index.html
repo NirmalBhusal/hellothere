@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Krishi Website</title>
     <style>
+        /* Base Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -21,6 +22,7 @@
             align-items: center;
             color: white;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            flex-wrap: wrap;  /* Allow flex to wrap on small screens */
         }
 
         nav ul {
@@ -28,6 +30,7 @@
             display: flex;
             margin: 0;
             padding: 0;
+            flex-wrap: wrap;  /* Allow navigation to wrap on smaller screens */
         }
 
         nav ul li {
@@ -68,8 +71,8 @@
         }
 
         main {
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 1200px;
+            margin: 20px auto;
             padding: 20px;
             text-align: center;
         }
@@ -87,14 +90,13 @@
         }
 
         .first {
-            border: 1px solid forestgreen;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 35vh;
             padding: 20px;
             background-color: #f0f0f0;
             box-sizing: border-box;
+            flex-wrap: wrap;  /* Allow flex to wrap on smaller screens */
         }
 
         .table {
@@ -102,67 +104,33 @@
             width: 150px;
         }
 
-        .third {
-            text-align: right;
+        .image {
+            border-radius: 50%;
+            align-self: center;
+            width: 150px;  /* Adjusted size */
+            margin: 20px 0;
         }
 
-        .second {
-            float: left;
-        }
-
-        .going {
-            text-align: right;
+        .third img {
+            max-width: 100%;
+            height: auto;
         }
 
         .tone {
-            height: 100px;
+            background-color: #f0f0f0;
+            padding: 10px;
+            text-align: center;
+            margin: 10px 0;
         }
 
         .went {
-            background-color: red;
-            float: left;
-            height: 45px;
-            width: 150px;
+            font-weight: bold;
+            color: red;
         }
 
         .gone {
-            display: flex;
             background-color: aqua;
-            height: 45px;
-        }
-
-        .image-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            padding: 20px;
-        }
-
-        .image {
-            flex: 0 0 calc(33.33% - 20px);
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .image img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
-
-        .caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 5px;
-            text-align: center;
-            font-size: 12px;
+            padding: 10px;
         }
 
         .scrolling-gallery {
@@ -192,78 +160,51 @@
             100% { transform: translateX(-100%); }
         }
 
-        .op {
-            background-color: #f0f0f0;
-            border: 2px solid gray;
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .first {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .button {
+                font-size: 14px;
+                padding: 10px 20px;
+                margin: 5px 0;
+            }
+
+            .image {
+                width: 100px;
+                margin: 10px 0;
+            }
+
+            .gone {
+                padding: 10px;
+                font-size: 14px;
+            }
         }
 
-        .pp {
-            background-color: #d4af37;
+        @media (max-width: 480px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .button {
+                width: 100%;
+                padding: 10px 0;
+            }
         }
 
-        .main {
-            border: 5px solid rgb(0, 0, 0);
-        }
-
-        .man {
-            border: 5px solid rgb(170, 0, 255);
-            animation: pulseBorder 10s linear infinite;
-            color-scheme: green;
-        }
-
-        @keyframes pulseBorder {
-            0% { border-color: rgba(146, 228, 3, 0.889); }
-            50% { border-color: red; }
-            60% { border-color: green; }
-            70% { border-color: rgb(56, 30, 151); }
-            100% { border-color: floralwhite; }
-        }
-
-        .human {
-            border: 5px solid black;
-        }
-
-        .first {
-            border: 2px solid green;
-            width: 100%;
-            height: 100%;
-        }
-        .image{
-            border-radius: 50%;
-            align-self: center;
-            width: 200px;
-
-        }
     </style>
 </head>
 <body>
-    <div class="going">
-    </div>
-
-    <div class="first">
-        <div class="second">
-            <img src="nepal_logo.png" alt="first" class="table">
-        </div>
-        <div class="center">
-            <img src="th.jpeg" alt="center" class="image">
-            <h4>
-                <div class="footer">
-                    <a href="#" onclick="toggleDetails();" style="text-decoration: none; color: blue;">N.B krishi Form</a>
-                    <div id="detailsContainer" style="display: none;">
-                        <p><strong>Name:</strong> Narayan Parsad Bhusal</p>
-                        <p><strong>Age:</strong> 42</p>
-                        <p><strong>Country:</strong> Nepal</p>
-                        <p><strong>City:</strong> Arghakhanchi</p>
-                        <p><strong>Occupation:</strong> Farming</p>
-                    </div>
-                </div>
-            </h4>
-        </div>
-        <div class="third">
-            <img src="nepal_flag.gif" alt="first">
-        </div>
-    </div>
-
+    <!-- Main Header -->
     <header>
         <a class="button" href="index.html">Home</a>
         <a class="button" href="image.html">Images</a>
@@ -274,13 +215,15 @@
         <a class="button" href="join.html">Join</a>
     </header>
 
+    <!-- Content Section -->
     <div class="tone">
-        <div class="went"><br> &nbsp;&nbsp;Latest Update</div>
+        <div class="went"><br>Latest Update</div>
         <div class="gone">
-            <h4><marquee behavior="actions" direction="right"> &nbsp;&nbsp; अाज २०८१्र/०४/2६ तपाइला हाम्रो Website nbkrishi.com.np मा स्वागत छ 🤗🤗🤗🤗🤗।</marquee></h4>
+            <h4>अाज २०८१्र/०४/२६ तपाइला हाम्रो Website nbkrishi.com.np मा स्वागत छ 🤗🤗🤗🤗🤗।</h4>
         </div>
     </div>
 
+    <!-- Main Content -->
     <main>
         <section id="home">
             <h1>Welcome to Krishi</h1>
@@ -306,6 +249,7 @@
         </section>
     </main>
 
+    <!-- Footer Section -->
     <footer class="date">
         <p>&copy; 2023 Krishi</p>
     </footer>
@@ -326,31 +270,14 @@
                 document.getElementById('currentDateTime').textContent = `Current Date and Time: ${formattedDateTime}`;
             }
 
-            // Update the date and time every second
             setInterval(updateDateTime, 1000);
 
-            // Initial update
-            updateDateTime();
-
-            function toggleDetails() {
-                var detailsContainer = document.getElementById("detailsContainer");
-                if (detailsContainer.style.display === "none") {
-                    detailsContainer.style.display = "block";
-                } else {
-                    detailsContainer.style.display = "none";
-                }
-            }
-
-            function incrementVisitCount() {
+            // Increment visit count when the page loads
+            window.onload = function() {
                 let visitCount = localStorage.getItem('visitCount');
                 visitCount = visitCount ? parseInt(visitCount) + 1 : 1;
                 localStorage.setItem('visitCount', visitCount);
                 document.getElementById('visitCount').textContent = visitCount;
-            }
-
-            // Increment visit count when the page loads
-            window.onload = function() {
-                incrementVisitCount();
             };
         </script>
     </footer>
