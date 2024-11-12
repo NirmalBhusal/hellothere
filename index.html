@@ -39,7 +39,7 @@
             list-style: none;
             display: flex;
             justify-content: center;
-            flex-wrap: wrap; /* Ensure items wrap on small screens */
+            flex-wrap: wrap;
             padding: 0;
             margin: 10px 0;
         }
@@ -137,6 +137,7 @@
             box-sizing: border-box;
         }
 
+        /* Ensuring Images Resize Correctly */
         .first .second img,
         .first .third img {
             max-width: 100%;
@@ -321,7 +322,7 @@
         </nav>
     </header>
 
-    <!-- Main Content -->
+    <!-- Main Content with Logo and Flag -->
     <div class="tone">
         <div class="went">Latest Update</div>
         <div class="gone">
@@ -329,6 +330,31 @@
         </div>
     </div>
 
+    <div class="first">
+        <div class="second">
+            <img src="nepal_logo.png" alt="Nepal Logo" class="table">
+        </div>
+        <div class="center">
+            <img src="th.jpeg" alt="Center Image" class="image">
+            <h4>
+                <div class="footer">
+                    <a href="#" onclick="toggleDetails();" style="text-decoration: none; color: blue;">N.B Krishi Form</a>
+                    <div id="detailsContainer" style="display: none;">
+                        <p><strong>Name:</strong> Narayan Parsad Bhusal</p>
+                        <p><strong>Age:</strong> 42</p>
+                        <p><strong>Country:</strong> Nepal</p>
+                        <p><strong>City:</strong> Arghakhanchi</p>
+                        <p><strong>Occupation:</strong> Farming</p>
+                    </div>
+                </div>
+            </h4>
+        </div>
+        <div class="third">
+            <img src="nepal_flag.gif" alt="Nepal Flag">
+        </div>
+    </div>
+
+    <!-- Main Section for Products, Contact, etc. -->
     <main>
         <section id="home">
             <h1>Welcome to Krishi</h1>
@@ -349,7 +375,7 @@
             <p>Feel free to reach out to us with any inquiries.</p>
             <address>
                 Email: <a href="mailto:N.Bkrishiform@gmail.com">N.Bkrishiform@gmail.com</a><br>
-                <p>Click the phone number to call: <a href="tel:9847531504">9847531504</a></p>
+                <p>Click the phone number to call: <a href="tel:9847531504" style="text-decoration: none; color: blue;">9847531504</a></p>
             </address>
         </section>
     </main>
@@ -357,10 +383,6 @@
     <!-- Footer Section -->
     <footer class="date">
         <p>&copy; 2023 Krishi</p>
-        <div id="visitorCounter">
-            <h3>Visitor Counter</h3>
-            <p>This page has been visited <span id="visitCount">0</span> times.</p>
-        </div>
     </footer>
 
     <footer>
